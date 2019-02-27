@@ -1,0 +1,322 @@
+# Tested on Deeptest release 1.12.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+  no-trivial-tests: true
+  string-printable: true
+  cover-include-pattern: ^((?!<init>).)*$
+units:
+  # Target Coverage: 61.9%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/file/LoadTestAwareAppender.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/file/LoadTestAwareAppender.java
+    # Child of LoadTestAwareAppender.class
+    # Child Coverage: 100.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/TraceAppender.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/TraceAppender.java
+  # Target Coverage: 72.7%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/AbstractSequencer.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/AbstractSequencer.java
+    # Child of AbstractSequencer.class
+    # Child Coverage: 0.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/util/Util.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/util/Util.java
+  # Target Coverage: 63.0%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/TimeoutBlockingWaitStrategy.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/TimeoutBlockingWaitStrategy.java
+  # Target Coverage: 63.0%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/LiteTimeoutBlockingWaitStrategy.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/LiteTimeoutBlockingWaitStrategy.java
+  # Target Coverage: 81.5%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/async/TracedExecutorService.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/async/TracedExecutorService.java
+    # Child of TracedExecutorService.class
+    # Child Coverage: 66.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/context/trace/SofaTraceContext.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/context/trace/SofaTraceContext.java
+    # Child of TracedExecutorService.class
+    # Child Coverage: 66.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/holder/SofaTraceContextHolder.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/holder/SofaTraceContextHolder.java
+  # Target Coverage: 48.6%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/WorkProcessor.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/WorkProcessor.java
+  # Target Coverage: 56.8%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/manager/AsyncCommonDigestAppenderManager.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/manager/AsyncCommonDigestAppenderManager.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 94.1%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/encoder/SpanEncoder.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/encoder/SpanEncoder.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 61.9%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/file/LoadTestAwareAppender.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/file/LoadTestAwareAppender.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 88.1%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/self/SynchronizingSelfLog.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/self/SynchronizingSelfLog.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 84.8%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/configuration/SofaTracerConfiguration.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/configuration/SofaTracerConfiguration.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 87.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/context/span/SofaTracerSpanContext.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/context/span/SofaTracerSpanContext.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 87.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/span/SofaTracerSpan.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/span/SofaTracerSpan.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 74.2%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/utils/TracerUtils.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/utils/TracerUtils.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 94.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/BlockingWaitStrategy.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/BlockingWaitStrategy.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 22.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/EventHandler.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/EventHandler.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 100.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/InsufficientCapacityException.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/InsufficientCapacityException.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 8.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/RingBuffer.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/RingBuffer.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 35.4%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/dsl/Disruptor.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/dsl/Disruptor.java
+    # Child of AsyncCommonDigestAppenderManager.class
+    # Child Coverage: 100.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/dsl/ProducerType.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/dsl/ProducerType.java
+  # Target Coverage: 87.0%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/PhasedBackoffWaitStrategy.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/PhasedBackoffWaitStrategy.java
+  # Target Coverage: 83.3%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/registry/ExtendFormat.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/registry/ExtendFormat.java
+  # Target Coverage: 41.2%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/reporter/stat/manager/SofaTracerStatisticReporterManager.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/reporter/stat/manager/SofaTracerStatisticReporterManager.java
+    # Child of SofaTracerStatisticReporterManager.class
+    # Child Coverage: 76.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/self/SelfLog.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/self/SelfLog.java
+    # Child of SofaTracerStatisticReporterManager.class
+    # Child Coverage: 81.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/reporter/stat/SofaTracerStatisticReporter.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/reporter/stat/SofaTracerStatisticReporter.java
+    # Child of SofaTracerStatisticReporterManager.class
+    # Child Coverage: 83.3%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/reporter/stat/model/StatKey.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/reporter/stat/model/StatKey.java
+    # Child of SofaTracerStatisticReporterManager.class
+    # Child Coverage: 64.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/reporter/stat/model/StatValues.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/reporter/stat/model/StatValues.java
+    # Child of SofaTracerStatisticReporterManager.class
+    # Child Coverage: 49.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/utils/StringUtils.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/utils/StringUtils.java
+  # Target Coverage: 53.8%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/async/TracerScheduleExecutorService.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/async/TracerScheduleExecutorService.java
+  # Target Coverage: 81.7%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/file/TimedRollingFileAppender.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/file/TimedRollingFileAppender.java
+    # Child of TimedRollingFileAppender.class
+    # Child Coverage: 100.0%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/config/LogReserveConfig.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/config/LogReserveConfig.java
+    # Child of TimedRollingFileAppender.class
+    # Child Coverage: 66.7%
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/appender/self/TracerDaemon.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/appender/self/TracerDaemon.java
+  # Target Coverage: 6.1%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/common/tracer/core/utils/ByteArrayUtils.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/common/tracer/core/utils/ByteArrayUtils.java
+  # Target Coverage: 44.6%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/BatchEventProcessor.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/BatchEventProcessor.java
+  # Target Coverage: 8.7%
+  - target:
+    - dir: tracer-core/target/classes
+      file: com/alipay/disruptor/RingBuffer.class
+      sourceDir: tracer-core/src/main/java
+      sourceFile: com/alipay/disruptor/RingBuffer.java
+phases:
+-
+  timeout: 60
+  cbmcArguments:
+    max-nondet-array-length: 10
+    unwind: 1
+    string-non-empty: true
+    refine: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 1
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 80
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 4
+    load-containing-class-only: true
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 50
+    max-nondet-string-length: 50
+    unwind: 4
+    load-containing-class-only: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 130
+    max-nondet-string-length: 110
+    unwind: 10
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 160
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 300
+    max-nondet-string-length: 100
+    unwind: 10
